@@ -12,8 +12,4 @@ public enum SituacaoJogoEnum {
     private SituacaoJogoEnum(int situacaoJogo) {
         this.situacaoJogo = situacaoJogo;
     }
-
-    public int getSituacaoJogo() {
-        return situacaoJogo;
-    }
 }

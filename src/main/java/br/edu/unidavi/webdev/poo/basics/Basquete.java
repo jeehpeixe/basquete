@@ -43,7 +43,7 @@ public class Basquete {
     private void processaInclusaoTime(Scanner scanner){
         System.out.println("Informe o nome do Time: ");
         
-        if (FactoryControleEquipes.criaEquipe(scanner.nextLine()) != null) {
+        if (ControleJogos.getInstance().criaEquipe(scanner.nextLine()) != null) {
             System.out.printf("\n Time criado com sucesso!\n\n");
         }
         else {

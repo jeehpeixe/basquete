@@ -63,13 +63,6 @@ public final class ControleJogos {
         return null;
     }
     
-    public Time criaEquipe(String sNomeEquipe){
-        Time oEquipe = new TimeBasquete(aEquipes.size() + 1, sNomeEquipe);
-        aEquipes.add(oEquipe);
-        
-        return oEquipe;
-    }
-    
     public ArrayList<Time> buscaEquipes(){
         return aEquipes;
     }
@@ -81,4 +74,17 @@ public final class ControleJogos {
     public boolean existemJogosAguardando(){
         return aJogos.stream().anyMatch((oJogoAtual) -> (oJogoAtual.isAguardando()));
     }
+    
+    public Time criaEquipe(String sNomeEquipe) {
+        for(Time oEquipeAtual : ControleJogos.getInstance().buscaEquipes()){
+            if (oEquipeAtual.getDescricao().equals(sNomeEquipe)) {
+                return null;
+            }
+        }
+        
+        Time oEquipe = new TimeBasquete(aEquipes.size() + 1, sNomeEquipe);
+        aEquipes.add(oEquipe);
+        
+        return oEquipe; 
+    } 
 }
